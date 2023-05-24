@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="title">
+  <h1>Poké-memory</h1>
+</div>
+  <div id="gameInfo" style="text-align: center; display: none;">
+    <p>Total number of Pairs: <span id="totalPair"></span></p>
+    <p>Number of Pairs Left: <span id="pairCount"></span></p>
+    <p>Matches: <span id="matchCount"></span></p>
+    <p>Flips: <span id="clickCount"></span></p>
+    <p>Accuracy: <span id="accuracy"></span>%</p>
+    <p>Time left: <span id="timer"></span>s</p>
+    <p><span id="message"><br></span></p>
+  </div>
+
+  <div id="game_grid"></div>
+  <br>
+  <div style="text-align: center;">
+    <select id="difficultySelect">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button id="startButton">Start</button>
+    <button id="reset">Reset</button>
+  </div>
+
+  <footer id="footer"><button id="theme">Change Theme</button></footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
+

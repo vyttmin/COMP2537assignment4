@@ -1,0 +1,99 @@
+body {
+  margin: 0px;
+}
+
+#game_grid {
+  border: 5px tomato solid;
+  width: 700px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  --cards-per-row: 3;
+}
+
+.dark {
+  background-color: #333333 ;
+  color: #ffffff;
+}
+
+.dark #game_grid {
+  border: 5px solid;
+  border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  border-image-slice: 1;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(95% / var(--cards-per-row));
+  padding-bottom: calc(95% / var(--cards-per-row));
+  position: relative;
+  transition: transform 1s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+img {
+  width: 100%;
+}
+
+#title {
+  text-align: center;
+  font-family: 'Your Funky Font', cursive;
+  font-size: 50px;
+  font-weight: bold;
+  color: #0f141f; /* Cornflower Blue */
+  text-shadow: 0 0 10px #4682b4, 0 0 20px #4682b4, 0 0 30px #4682b4; /* Different shades of blue */
+}
+
+
+.front_face,
+.back_face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front_face {
+  transform: rotateY(180deg);
+}
+
+#message {
+  font-family: 'Your Funky Font', cursive;
+  font-weight: bold;
+  /* Additional funky styles */
+  color: #ff00ff; /* Pink color, feel free to change */
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff00ff; }
+  14% { color: #ff00ff; }
+  28% { color: #ff00ff; }
+  42% { color: #00ff00; }
+  57% { color: #00ffff; }
+  71% { color: #0000ff; }
+  85% { color: #ff0000; }
+  100% { color: #ff00ff; }
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
