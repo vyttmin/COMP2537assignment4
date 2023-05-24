@@ -456,7 +456,7 @@ $(document).ready(() => {
     $("#startButton").hide();
     $("#difficultySelect").hide();
   });
-  
+
 
   $('#theme').on('click', function () {
     const bodyElement = $("body");
