@@ -29,6 +29,7 @@ $(document).ready(() => {
       $("#clickCount").text(flip);
       $("#accuracy").text(accuracy);
     };
+
     const startTimer = () => {
       let timeLeft = 100;
       $("#timer").text(timeLeft);
@@ -120,6 +121,16 @@ $(document).ready(() => {
     var flippedCards = 0;
     var canFlip = true;
 
+    const updateGameInfo = () => {
+      $('#title').hide();
+      accuracy = flip !== 0 ? Math.round((matchCount / flip) * 100) : 0;
+      $("#totalPair").text(mediumMatches);
+      $("#pairCount").text(numberOfPairLeft);
+      $("#matchCount").text(matchCount);
+      $("#clickCount").text(flip);
+      $("#accuracy").text(accuracy);
+    };
+
     const startTimer = (timeLimit) => {
       let timeLeft = timeLimit;
       $("#timer").text(timeLeft);
@@ -139,15 +150,6 @@ $(document).ready(() => {
           clearInterval(timer);
         }
       }, 1000);
-    };
-
-    const updateGameInfo = () => {
-      accuracy = flip !== 0 ? Math.round((matchCount / flip) * 100) : 0;
-      $("#totalPair").text(mediumMatches);
-      $("#pairCount").text(numberOfPairLeft);
-      $("#matchCount").text(matchCount);
-      $("#clickCount").text(flip);
-      $("#accuracy").text(accuracy);
     };
 
     $(".card").on("click", function() {
@@ -195,7 +197,6 @@ $(document).ready(() => {
           }, 1000);
         }
       }
-    
 
       if (flippedCards === 2) {
         flippedCards = 0;
@@ -223,6 +224,7 @@ $(document).ready(() => {
     var canFlip = true;
 
     const updateGameInfo = () => {
+      $('#title').hide();
       accuracy = flip !== 0 ? Math.round((matchCount / flip) * 100) : 0;
       $("#totalPair").text(hardMatches);
       $("#pairCount").text(numberOfPairLeft);
