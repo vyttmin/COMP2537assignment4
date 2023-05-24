@@ -57,7 +57,6 @@ $(document).ready(() => {
     
       $(this).toggleClass("flip");
       flippedCards++;
-      flip++;
       updateGameInfo();
     
       if (!firstCard) {
@@ -94,8 +93,10 @@ $(document).ready(() => {
             canFlip = true;
           }, 1000);
         }
+        flip++;
+        updateGameInfo();
       }
-
+    
       if (flippedCards === 2) {
         flippedCards = 0;
         canFlip = false;
@@ -106,7 +107,7 @@ $(document).ready(() => {
     });
     
     updateGameInfo();
-    startTimer();
+    startTimer(200);
   };
 
   // Medium Mode
@@ -159,7 +160,6 @@ $(document).ready(() => {
     
       $(this).toggleClass("flip");
       flippedCards++;
-      flip++;
       updateGameInfo();
     
       if (!firstCard) {
@@ -196,6 +196,8 @@ $(document).ready(() => {
             canFlip = true;
           }, 1000);
         }
+        flip++;
+        updateGameInfo();
       }
 
       if (flippedCards === 2) {
@@ -298,6 +300,8 @@ $(document).ready(() => {
             canFlip = true;
           }, 1000);
         }
+        flip++;
+        updateGameInfo();
       }
     
       if (flippedCards === 2) {
