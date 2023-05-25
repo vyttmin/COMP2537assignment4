@@ -263,7 +263,6 @@ $(document).ready(() => {
     
       $(this).toggleClass("flip");
       flippedCards++;
-      flip++;
       updateGameInfo();
     
       if (!firstCard) {
